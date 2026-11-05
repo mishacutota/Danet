@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0d" />
+  <meta name="color-scheme" content="dark" />
+  <title>Да или Нет — фишка судьбы</title>
+  <link rel="stylesheet" href="styles.css" src="styles.css"  />
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="bg__glow"></div>
+    <div class="bg__grid"></div>
+    <div class="bg__vignette"></div>
+  </div>
+
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <main class="app">
+    <header class="top">
+      <div class="brand">
+        <span class="brand__dot"></span>
+        <span class="brand__name">Да / Нет</span>
+      </div>
+      <div class="stats" id="stats">
+        <span class="stat"><b id="statYes">0</b> да</span>
+        <span class="stat"><b id="statNo">0</b> нет</span>
+      </div>
+    </header>
+
+    <section class="stage">
+      <div class="answer" id="answer" aria-live="polite">
+        <span class="answer__text" id="answerText">?</span>
+        <span class="answer__glow" aria-hidden="true"></span>
+      </div>
+
+      <button class="coin" id="coin" aria-label="Бросить фишку">
+        <span class="coin__shadow" aria-hidden="true"></span>
+        <span class="coin__ring" aria-hidden="true"></span>
+        <span class="coin__inner">
+          <span class="coin__face coin__face--front">
+            <span class="coin__glyph">?</span>
+          </span>
+          <span class="coin__face coin__face--yes">
+            <span class="coin__glyph">ДА</span>
+          </span>
+          <span class="coin__face coin__face--no">
+            <span class="coin__glyph">НЕТ</span>
+          </span>
+          <span class="coin__shine" aria-hidden="true"></span>
+        </span>
+      </button>
+
+      <p class="hint" id="hint">Нажми на фишку — судьба решит за тебя</p>
+    </section>
+
+    <footer class="bottom">
+      <div class="question-box">
+        <input id="question" class="question-box__input" type="text" maxlength="80" placeholder="Загадай вопрос (необязательно)" autocomplete="off" enterkeyhint="go" />
+      </div>
+      <div class="actions">
+        <button class="btn btn--ghost" id="soundBtn" aria-pressed="true" title="Звук" aria-label="Звук">
+          <span id="soundIcon">🔊</span>
+        </button>
+        <button class="btn btn--primary" id="flipBtn">Бросить</button>
+        <button class="btn btn--ghost" id="resetBtn" title="Сбросить статистику" aria-label="Сбросить статистику">↺</button>
+      </div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
